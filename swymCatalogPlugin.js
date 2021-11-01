@@ -118,3 +118,10 @@ function SwymCatalog(config) {
 
   this.init();
 }
+
+// Example Usage:
+// var mySwym = new SwymCatalog({
+//   container: '#swym-catalog-container',
+//   visibleTileFields: ['title', 'price', 'image'],
+//   catalogSkin: 'red',
+// })
