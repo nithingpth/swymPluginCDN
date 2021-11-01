@@ -24,6 +24,7 @@ function SwymCatalog(config) {
   config = { ...defaultConfig, ...config };
 
   this.init = function () {
+    //adding styles this way is not recommended
     this.addStyle(`
       ${config.container}{
         background-color: ${config.catalogSkin};
@@ -56,6 +57,7 @@ function SwymCatalog(config) {
       : config.productSetMap['noMatch'];
 
     this.fetchJson(productsPath).then((resp) => {
+      //innerHtml usage is not recommended
       container.innerHTML = this.getTiles(resp.products, productRange);
       container.addEventListener('click', function (event) {
         if (event.target.classList.contains('tile-action-addtocart')) {
@@ -72,6 +74,7 @@ function SwymCatalog(config) {
     let strTilesList = '';
     productList.forEach((product, index) => {
       if (index >= range[0] && index <= range[1]) {
+        //building DOM via template strings is not recommended
         strTilesList += `<div class="tile">
                               <div class="tile-image"><img src="${
                                 product.images[0].src
