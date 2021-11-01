@@ -15,7 +15,7 @@ function SwymCatalog(config) {
         alert('added to cart');
       },
       viewNow: function () {
-        alert('~~~~~~~~~');
+        window.open(event.target.getAttribute('link'));
       },
     },
     catalogSkin: '#00000000',
@@ -62,7 +62,7 @@ function SwymCatalog(config) {
           config.tileActions.buyNow();
         }
         if (event.target.classList.contains('tile-action-viewnow')) {
-          window.open(event.target.getAttribute('link'));
+          config.tileActions.viewNow();
         }
       });
     });
