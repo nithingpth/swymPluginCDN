@@ -52,6 +52,7 @@ function SwymCatalog(config) {
       }
     `);
     let container = document.querySelector(config.container);
+    container = container ? container : document.body;
     let productRange = config.productSetMap[window.location.pathname]
       ? config.productSetMap[window.location.pathname]
       : config.productSetMap['noMatch'];
