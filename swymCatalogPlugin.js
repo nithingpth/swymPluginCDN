@@ -52,7 +52,12 @@ function SwymCatalog(config) {
       }
     `);
     let container = document.querySelector(config.container);
-    container = container ? container : document.body;
+    if(!container){
+      var node = document.createElement("div");
+      node.id = "config.container";
+      document.body.appendChild(node);     
+    }
+    
     let productRange = config.productSetMap[window.location.pathname]
       ? config.productSetMap[window.location.pathname]
       : config.productSetMap['noMatch'];
