@@ -77,7 +77,7 @@ function SwymCatalog(config) {
         //building DOM via template strings is not recommended
         strTilesList += `<div class="tile">
                               <div class="tile-image"><img src="${
-                                product.images[0].src
+                                product.images[0].src.replace(".jpg","_300x300.jpg")
                               }"/></div>
                               <div class="tile-text">${product.title}</div>
                               ${
