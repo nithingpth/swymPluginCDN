@@ -54,8 +54,9 @@ function SwymCatalog(config) {
     let container = document.querySelector(config.container);
     if(!container){
       var node = document.createElement("div");
-      node.id = "config.container";
-      document.body.appendChild(node);     
+      node.id = config.container.replace("#",'').replace(".",'');
+      document.body.appendChild(node);  
+      container = document.querySelector(config.container);
     }
     
     let productRange = config.productSetMap[window.location.pathname]
